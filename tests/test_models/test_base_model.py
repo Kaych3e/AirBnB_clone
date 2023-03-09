@@ -61,17 +61,18 @@ class TestBaseModel(unittest.TestCase):
         o = BaseModel()
         for k, v in attributes.items():
             self.assertTrue(hasattr(o, k))
-            self.assertEqual(type(getattr(o, k, None)), v
-			    
+            self.assertEqual(type(getattr(o, k, None)), v)
+
     def test_3_datetime_created(self):
         """Tests if updated_at & created_at are current at creation."""
+
         date_now = datetime.now()
         b = BaseModel()
         diff = b.updated_at - b.created_at
         self.assertTrue(abs(diff.total_seconds()) < 0.01)
         diff = b.created_at - date_now
         self.assertTrue(abs(diff.total_seconds()) < 0.1)
-							
+
     def test_3_id(self):
         """Tests for unique user ids."""
 
@@ -87,7 +88,7 @@ class TestBaseModel(unittest.TestCase):
         b.save()
         diff = b.updated_at - date_now
         self.assertTrue(abs(diff.total_seconds()) < 0.01)
-	
+
     def test_3_str(self):
         """Tests for __str__ method."""
         b = BaseModel()
@@ -116,7 +117,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertEqual(d["created_at"], b.created_at.isoformat())
         self.assertEqual(d["updated_at"], b.updated_at.isoformat())
         self.assertEqual(d["name"], b.name)
-	self.assertEqual(d["age"], b.age))
+        self.assertEqual(d["age"], b.age)
 
     def test_3_to_dict_no_args(self):
         """Tests to_dict() with no arguments."""
