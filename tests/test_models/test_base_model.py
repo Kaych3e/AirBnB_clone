@@ -12,6 +12,7 @@ import time
 import unittest
 import uuid
 
+
 class TestBaseModel(unittest.TestCase):
 
     """Test Cases for the BaseModel class."""
@@ -107,7 +108,7 @@ class TestBaseModel(unittest.TestCase):
 
     def test_3_to_dict(self):
         """Tests the public instance method to_dict()."""
-													   
+
         b = BaseModel()
         b.name = "Laura"
         b.age = 23
@@ -148,13 +149,13 @@ class TestBaseModel(unittest.TestCase):
     def test_4_instantiation_dict(self):
         """Tests instantiation with **kwargs from custom dict."""
         d = {"__class__": "BaseModel",
-             "updated_at":
-              datetime(2050, 12, 30, 23, 59, 59, 123456).isoformat(),
-              "created_at": datetime.now().isoformat(),
-              "id": uuid.uuid4(),
-              "var": "foobar",
-              "int": 108,
-              "float": 3.14}
+            "updated_at":
+            datetime(2050, 12, 30, 23, 59, 59, 123456).isoformat(),
+            "created_at": datetime.now().isoformat(),
+            "id": uuid.uuid4(),
+            "var": "foobar",
+            "int": 108,
+            "float": 3.14}
         o = BaseModel(**d)
         self.assertEqual(o.to_dict(), d)
 
