@@ -20,10 +20,15 @@ class BaseModel:
             *args (any): Unused.
             **kwargs (dict): Key/value pair of attributes."""
 
+        tform = "%Y-%m-%dT%H:%M:%S.%f"
+        self.id = str(uuid4())
+        self.created_at = datetime.now()
+        self.updated_at = datetime.now()
+
         if len(kwargs) != 0:
             for key, value in kwargs.items():
                 if key == "__class__":
-                    continue:
+                    continue
                 elif key == "created_at" or key == "updated_at":
                     self.__dict__[key] = datetime.strptime(value, tform)
                 else:
@@ -31,10 +36,6 @@ class BaseModel:
         else:
             models.storage.new(self)
 
-        tform = "%Y-%m-%dT%H:%M:%S.%f"
-        self.id = str(uuid4())
-        self.created_at = datetime.now()
-        self.updated_at = datetime.now()
 
     def __str__(self):
         """Return the print/str representation of the BaseModel instance."""
