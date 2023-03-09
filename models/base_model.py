@@ -6,8 +6,10 @@ from uuid import uuid4
 from datetime import datetime
 import models
 
+
 class BaseModel:
-"""Base class for all our classes in this project"""
+    """Base class for all our classes in this project"""
+
 
     def __init__(self, *args, **kwargs):
         """initialises a new Basemodel
