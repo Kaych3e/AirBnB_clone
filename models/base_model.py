@@ -4,6 +4,8 @@ the base class for all our models"""
 
 from uuid import uuid4
 from datetime import datetime
+import os
+import os, sys
 import models
 
 class BaseModel:
@@ -19,7 +21,7 @@ class BaseModel:
         if len(kwargs) != 0:
             for key, value in kwargs.items():
                 if key == "__class__":
-                    continue;
+                    continue:
                 elif key == "created_at" or key == "updated_at":
                     self.__dict__[key] = datetime.strptime(value, tform)
                 else:
@@ -49,5 +51,5 @@ class BaseModel:
         dict_copy = self.__dict__.copy()
         dict_copy["__class__"] = self.__class__.__name__
         dict_copy["created_at"] = self.created_at.isoformat()
-	dict_copy["updated_at"] = self.updated_at.isoformat()
+        dict_copy["updated_at"] = self.updated_at.isoformat()
         return dict_copy
