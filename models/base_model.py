@@ -2,9 +2,9 @@
 """This File defines the BaseModel class that will serve as
 the base class for all our models"""
 
-import models
 from uuid import uuid4
 from datetime import datetime
+import models
 
 class BaseModel:
 """Base class for all our classes in this project"""
