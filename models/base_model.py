@@ -5,13 +5,13 @@ the base class for all our models"""
 from uuid import uuid4
 from datetime import datetime
 import os
-import os, sys
+import os
+import sys
 import models
 
 
 class BaseModel:
     """Base class for all our classes in this project"""
-
 
     def __init__(self, *args, **kwargs):
         """initialises a new Basemodel
@@ -35,7 +35,6 @@ class BaseModel:
                     self.__dict__[key] = value
         else:
             models.storage.new(self)
-
 
     def __str__(self):
         """Return the print/str representation of the BaseModel instance."""
