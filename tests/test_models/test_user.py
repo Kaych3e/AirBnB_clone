@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-<<<<<<< HEAD
+:<<<<<< HEAD
 """
 Unittest for user.py
 """
