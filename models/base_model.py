@@ -5,7 +5,6 @@ the base class for all our models"""
 from uuid import uuid4
 from datetime import datetime
 import os
-import os
 import sys
 import models
 
