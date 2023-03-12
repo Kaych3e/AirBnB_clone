@@ -38,9 +38,3 @@ class TestReview(unittest.TestCase):
         self.assertIsInstance(self.r.id, str)
         self.assertIsInstance(self.r.created_at, datetime.datetime)
         self.assertIsInstance(self.r.updated_at, datetime.datetime)
-<<<<<<< HEAD
-=======
-
-if __name__ == '__main__':
-    unittest.main()
->>>>>>> 7eab21e232931785c2fedfd320a44796080f89a6
